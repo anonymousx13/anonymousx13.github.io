@@ -16,4 +16,10 @@ function minus_problem_btn_handler(e) {
 
     alert(msg);
     counter_div.textContent = txt - 1
+
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+   btn = document.getElementById("minus_problem_btn");
+   btn.addEventListener("click", minus_problem_btn_handler);
+});
