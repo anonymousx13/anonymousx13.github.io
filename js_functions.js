@@ -1,3 +1,7 @@
+BOT_TOKEN = '5552326282:AAHDk4hNElVZI4QAoxa9RlZICvZo_QwWZww'
+BOT_NAME = 'inzera_bot'
+GROUP_ID = '-685273008'
+
 function minus_problem_btn_handler(e) {
     var counter_div = document.getElementById("problems_counter");
     var txt = counter_div.textContent || counter_div.innerText;
@@ -19,7 +23,21 @@ function minus_problem_btn_handler(e) {
 
 }
 
+function send_msg(text) {
+    var message = text
+    var url = `https:/` + `/api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${GROUP_ID}&text=${message}`
+    let api = new XMLHttpRequest();
+    api.open("GET", url, true);
+    api.send();
+}
+
 document.addEventListener("DOMContentLoaded", function() {
+    //send_msg()
    btn = document.getElementById("minus_problem_btn");
+
+   if (btn === null) {
+        return;
+   }
+
    btn.addEventListener("click", minus_problem_btn_handler);
 });
