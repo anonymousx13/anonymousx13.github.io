@@ -41,34 +41,12 @@
     </div>
 
     <form name="search" style="text-align: center">
-        <input type="button" name="send" value="избавиться от одной проблемы!" />
+        <input type="button" onclick="minus_problem_btn_handler()" name="minus_problem_btn" value="избавиться от одной проблемы!" />
     </form>
-
-    <div id="printBlock"></div>
 
 </body>
 
-<script>
-function sendForm(e){
-
-    var counter_div = document.getElementById("problems_counter");
-    var txt = counter_div.textContent || counter_div.innerText;
-
-    if (txt == 0) { return }
-
-    if (txt == 1) {
-        msg = 'позорных проблем не осталось. дип!!'
-    } else {
-        msg = `были ${txt} позорные проблемы! Только ${txt - 1} позорные проблемы остались и всё!!`
-    }
-
-    alert(msg);
-    counter_div.textContent = txt - 1
-
-}
-
-var sendButton = document.search.send;
-sendButton.addEventListener("click", sendForm);
+<script type="text/javascript" src="js_functions.js">
 </script>
 
 </html>
