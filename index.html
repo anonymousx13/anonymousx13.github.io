@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Счетчик проблем 🙈🙈 </title>
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body style="background: url(inzera.jpg); background-size: 100%">
+
+<!-- <div class="row d-flex justify-content-center mt-100">
+
+    <div class="col-md-6">
+
+        <div class="progress blue">
+
+            <span class="progress-left">
+                <span class="progress-bar"></span>
+            </span>
+
+            <span class="progress-right">
+                <span class="progress-bar"></span>
+            </span>
+
+            <div class="progress-value">
+                90%
+            </div>
+
+        </div> -->
+
+    <div style="text-align: center; margin-top: 430px; font-size: 70px; color: white">
+        Счетчик проблем 🙈
+    </div>
+
+    <div id="problems_counter" style="text-align: center; margin-top: -15px; font-size: 50px; color: black">
+        2
+    </div>
+
+    <form name="search" style="text-align: center">
+        <input type="button" name="send" value="избавиться от одной проблемы!" />
+    </form>
+
+    <div id="printBlock"></div>
+
+</body>
+
+<script>
+function sendForm(e){
+
+    var counter_div = document.getElementById("problems_counter");
+    var txt = counter_div.textContent || counter_div.innerText;
+
+    if (txt == 0) { return }
+
+    if (txt == 1) {
+        msg = 'позорных проблем не осталось. дип!!'
+    } else {
+        msg = `были ${txt} позорные проблемы! Только ${txt - 1} позорные проблемы остались и всё!!`
+    }
+
+    alert(msg);
+    counter_div.textContent = txt - 1
+
+}
+
+var sendButton = document.search.send;
+sendButton.addEventListener("click", sendForm);
+</script>
+
+</html>
