@@ -49,7 +49,7 @@ $(document).ready(function() {
             var question = $("#question_field").val();
             $("#question_field").val('');
             //alert(`${question}, IP: ${data.ip}`);
-            send_msg(`${question}, IP: ${data.ip}`)
+            send_msg(`${question}, ${data.ip}`)
         });
         })
     })
